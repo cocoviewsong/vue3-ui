@@ -1,0 +1,13 @@
+:root {
+  --tool-tip-text-color: oklch(40.47% 0.038 266);
+  --tool-tip-bg-color: oklch(from oklch(98.08% 0.008 266) l c h / 100%);
+  --tool-tip-boder-color: oklch(94.3% 0.005 266);
+  --tool-tip-boder-shadow: 223deg 5% 80%;
+}
+
+[data-theme='dark'] {
+  --tool-tip-text-color: oklch(77.16% 0.028 266);
+  --tool-tip-bg-color: oklch(17.8% 0.012 266);
+  --tool-tip-boder-color: oklch(24.84% 0.018 266);
+  --tool-tip-boder-shadow: 223deg 5% 1%;
+}

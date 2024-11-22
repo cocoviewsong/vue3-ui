@@ -1,2 +1,5 @@
+@import url(./reset.css);
+@import url(./variable.css);
 @import url(./common.css);
-@import url(./button/btn-common.css);
+@import url(./button/index.css);
+@import url(./tool-tip/index.css);

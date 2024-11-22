@@ -1,11 +1,33 @@
 <template>
+  <div class="nav">
+    <ul>
+      <template v-for="item in navList">
+        <li>
+          <RouterLink :to="item.url">
+            {{ item.text }}
+          </RouterLink>
+        </li>
+      </template>
+    </ul>
+  </div>
   <RouterView></RouterView>
   <div class="dark-toggle" @click="toggleDark">黑暗模式</div>
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import { RouterView, RouterLink } from 'vue-router';
 import { ThemeManager } from './utils/theme';
+
+const navList = [
+  {
+    url: '/button',
+    text: '按钮',
+  },
+  {
+    url: '/tool-tip',
+    text: '文字提示',
+  },
+];
 
 const toggleDark = () => {
   const themeDataset = document.documentElement.dataset;
@@ -21,10 +43,47 @@ const toggleDark = () => {
 </script>
 
 <style scoped>
+.nav {
+  float: left;
+  position: relative;
+  left: 0;
+  height: 100vh;
+
+  ul {
+    border-right: 1px solid var(--tool-tip-bg-color);
+  }
+
+  li,
+  a {
+    display: block;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  li {
+    padding: 8px 15px;
+    padding-right: 25px;
+    margin-top: 15px;
+    box-sizing: border-box;
+  }
+
+  li:hover {
+    text-decoration: underline;
+  }
+
+  .router-link-active {
+    color: #f77;
+  }
+}
+.nav::after {
+  content: '';
+  clear: both;
+}
+
 .dark-toggle {
   position: fixed;
-  padding: 9px 16px;
-  color: #f77;
+  padding: 0 12px;
+  color: var(--text-secondary);
   right: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -32,6 +91,7 @@ const toggleDark = () => {
   line-height: 32px;
   border-radius: var(--co-border-radius);
   transition: all var(--co-transition-duration);
+  font-size: 14px;
   cursor: pointer;
 }
 

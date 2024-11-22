@@ -10,7 +10,12 @@ const router = createRouter({
     {
       path: '/button',
       name: 'button',
-      component: () => import('@/components/demo/index.vue'),
+      component: () => import('@/components/button/demo/index.vue'),
+    },
+    {
+      path: '/tool-tip',
+      name: 'tool-tip',
+      component: () => import('@/components/tool-tip/demo/index.vue'),
     },
   ],
 });
