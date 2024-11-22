@@ -1,0 +1,76 @@
+:root {
+  --co-button-padding: 11px 16px;
+  --co-button-font-size: 14px;
+
+  /* 文字颜色 */
+  --co-button-text-default: oklch(55.52% 0.223 266);
+  --co-button-text-primary: var(--white);
+  --co-button-text-success: var(--white);
+  --co-button-text-warning: var(--white);
+  --co-button-text-danger: var(--white);
+  --co-button-text-disabled: oklch(50% 0 0);
+
+  /* 背景颜色 */
+  --co-button-bg-color-default: oklch(var(--co-button-text-default) / 5%);
+  --co-button-bg-color-primary: oklch(50% 0.16 266);
+  --co-button-bg-color-success: var(--green-900);
+  --co-button-bg-color-warning: var(--orange-800);
+  --co-button-bg-color-danger: var(--red-900);
+  --co-button-bg-color-disabled: var(--gray-200);
+}
+
+[data-theme='dark'] {
+  --co-button-text-default: oklch(64.6% 0.172 266);
+  --co-button-text-primary: var(--white);
+  --co-button-text-success: var(--white);
+  --co-button-text-warning: var(--white);
+  --co-button-text-danger: var(--white);
+  --co-button-text-disabled: var(--white);
+
+  --co-button-bg-color-default: oklch(var(--co-button-text-default) / 7%);
+  --co-button-bg-color-primary: oklch(50% 0.16 266);
+  --co-button-bg-color-success: var(--green-900);
+  --co-button-bg-color-warning: var(--orange-800);
+  --co-button-bg-color-danger: var(--red-900);
+  --co-button-bg-color-disabled: var(--gray-200);
+}
+
+.co-button {
+  padding: var(--co-button-padding);
+  font-size: var(--co-button-font-size);
+  border-radius: var(--co-border-radius);
+  transition: background-color var(--co-transition-duration);
+  border: 0px;
+  cursor: pointer;
+}
+
+.co-button--default {
+  background-color: var(--co-button-bg-color-default);
+  color: var(--co-button-text-default);
+}
+
+.co-button--primary {
+  background-color: var(--co-button-bg-color-primary);
+  color: var(--co-button-text-primary);
+}
+
+.co-button--success {
+  background-color: var(--co-button-bg-color-success);
+  color: var(--co-button-text-success);
+}
+
+.co-button--warning {
+  background-color: var(--co-button-bg-color-warning);
+  color: var(--co-button-text-warning);
+}
+
+.co-button--danger {
+  background-color: var(--co-button-bg-color-danger);
+  color: var(--co-button-text-danger);
+}
+
+.co-button--disabled {
+  background-color: var(--co-button-bg-color-disabled);
+  color: var(--co-button-text-disabled);
+  cursor: not-allowed;
+}
