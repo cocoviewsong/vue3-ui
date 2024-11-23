@@ -1,7 +1,21 @@
 {
   "name": "cocoviewsong-vue3-ui",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.10",
+  "main": "dist/Coui.umd.js",
+  "module": "dist/Coui.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/assets/css"
+  ],
+  "peerDependencies": {
+    "vue": "^3.5.12"
+  },
+  "keywords": [
+    "vue3",
+    "ui-library",
+    "components"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",

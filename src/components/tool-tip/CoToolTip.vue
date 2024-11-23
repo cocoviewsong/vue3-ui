@@ -4,17 +4,62 @@
     @mouseenter="showTooltip"
     @mouseleave="hideTooltip"
   >
-    <slot name="tooptip-desc">Default Tooptip Desc</slot>
-    <div v-if="isTooltipVisible" class="tooltip">
-      <slot name="tooltip-content">Default Tooltip Content</slot>
+    <slot name="default">Default Tooptip Desc</slot>
+    <div
+      v-if="isTooltipVisible"
+      class="tooltip"
+      :style="{ top: toolTipPosition.top, left: toolTipPosition.left }"
+    >
+      <slot name="tooltip-content"> {{ tipText }} </slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import type { PropType } from 'vue';
+
+const props = defineProps({
+  type: {
+    type: String as PropType<'top' | 'left' | 'right' | 'bottom'>,
+  },
+  tipText: {
+    type: String,
+    default: 'Default Tooltip Content',
+  },
+});
 
 const isTooltipVisible = ref(false);
+
+const toolTipPosition = computed(() => {
+  switch (props.type) {
+    case 'bottom':
+      return {
+        top: '200%',
+        left: '50%',
+      };
+    case 'top':
+      return {
+        top: '-100%',
+        left: '50%',
+      };
+    case 'left':
+      return {
+        top: '50%',
+        left: '-50%',
+      };
+    case 'right':
+      return {
+        top: '50%',
+        left: '150%',
+      };
+    default:
+      return {
+        top: '205%',
+        left: '50%',
+      };
+  }
+});
 
 const showTooltip = () => {
   isTooltipVisible.value = true;
@@ -32,11 +77,9 @@ const hideTooltip = () => {
 
 .tooltip {
   position: absolute;
-  top: 125%;
-  left: 50%;
   padding: 6px 12px;
   font-size: 16px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   white-space: nowrap;
   box-shadow: 0.5px 1px 1px hsl(var(--tool-tip-boder-shadow) / 0.333);
   color: var(--tool-tip-text-color);

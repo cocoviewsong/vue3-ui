@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import '@/assets/css/index.css';
 import { ThemeManager } from './utils/theme';
-import CoComponentsPlugin from './components';
+import CoComponentsPlugin from '.';
 
 const app = createApp(App);
 
