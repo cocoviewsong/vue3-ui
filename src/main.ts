@@ -10,5 +10,5 @@ const app = createApp(App);
 app.use(router);
 app.use(CoComponentsPlugin);
 
-ThemeManager.init('dark');
+ThemeManager.init();
 app.mount('#app');

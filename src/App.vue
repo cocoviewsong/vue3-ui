@@ -27,15 +27,25 @@ const navList = [
     url: '/tool-tip',
     text: '文字提示',
   },
+  {
+    url: '/tag',
+    text: '标签',
+  },
+  {
+    url: '/badge',
+    text: '上标',
+  },
 ];
 
 const toggleDark = () => {
   const themeDataset = document.documentElement.dataset;
 
   if (themeDataset.theme === 'dark') {
+    document.documentElement.className = 'cocoviewsong-light';
     themeDataset.theme = 'light';
     ThemeManager.setTheme('light');
   } else {
+    document.documentElement.className = 'cocoviewsong-dark';
     themeDataset.theme = 'dark';
     ThemeManager.setTheme('dark');
   }

@@ -1,0 +1,43 @@
+:root {
+  --co-badge-text-default: oklch(55.52% 0.223 266);
+  --co-badge-text-primary: var(--white);
+  --co-badge-text-success: var(--white);
+  --co-badge-text-warning: var(--white);
+  --co-badge-text-danger: var(--white);
+  --co-badge-text-disabled: oklch(50% 0 0);
+
+  --co-badge-bg-color-default: oklch(var(--co-badge-text-default) / 5%);
+  --co-badge-bg-color-primary: oklch(50% 0.16 266);
+  --co-badge-bg-color-success: var(--green-900);
+  --co-badge-bg-color-warning: var(--orange-800);
+  --co-badge-bg-color-danger: var(--red-900);
+  --co-badge-bg-color-disabled: var(--gray-200);
+}
+
+[data-theme='dark'] {
+  --co-badge-text-default: oklch(64.6% 0.172 266);
+  --co-badge-text-primary: var(--white);
+  --co-badge-text-success: var(--white);
+  --co-badge-text-warning: var(--white);
+  --co-badge-text-danger: var(--white);
+  --co-badge-text-disabled: var(--white);
+
+  --co-badge-bg-color-default: oklch(var(--co-badge-text-default) / 7%);
+  --co-badge-bg-color-primary: oklch(50% 0.16 266);
+  --co-badge-bg-color-success: var(--green-900);
+  --co-badge-bg-color-warning: var(--orange-800);
+  --co-badge-bg-color-danger: var(--red-900);
+  --co-badge-bg-color-disabled: var(--gray-200);
+}
+
+.co-badge {
+  display: inline-block;
+  position: relative;
+}
+
+.co-badge-right--top {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+}

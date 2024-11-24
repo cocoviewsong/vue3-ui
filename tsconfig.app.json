@@ -13,8 +13,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"], // 包含 .ts 和 .vue 文件
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "script/auto-component.js"
+  ], // 包含 .ts 和 .vue 文件
   "exclude": ["node_modules", "dist", "tests"] // 排除不必要的文件
 }

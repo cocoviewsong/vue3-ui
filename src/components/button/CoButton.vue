@@ -31,7 +31,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import type { PropType } from 'vue';
 
 // 定义 props

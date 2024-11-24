@@ -1,0 +1,94 @@
+:root {
+  --co-tag-font-size-default: 14px;
+  --co-tag-font-size-mini: 10px;
+  --co-tag-font-size-medium: 12px;
+  --co-tag-font-size-small: 16px;
+  --co-tag-border-radius: 8px;
+
+  /* 文字颜色 */
+  --co-tag-text-default: oklch(55.52% 0.223 266);
+  --co-tag-text-primary: var(--white);
+  --co-tag-text-success: var(--white);
+  --co-tag-text-warning: var(--white);
+  --co-tag-text-danger: var(--white);
+  --co-tag-text-disabled: oklch(50% 0 0);
+
+  /* 背景颜色 */
+  --co-tag-bg-color-default: oklch(var(--co-tag-text-default) / 5%);
+  --co-tag-bg-color-primary: oklch(50% 0.16 266);
+  --co-tag-bg-color-success: var(--green-900);
+  --co-tag-bg-color-warning: var(--orange-800);
+  --co-tag-bg-color-danger: var(--red-900);
+  --co-tag-bg-color-disabled: var(--gray-200);
+}
+
+[data-theme='dark'] {
+  --co-tag-text-default: oklch(64.6% 0.172 266);
+  --co-tag-text-primary: var(--white);
+  --co-tag-text-success: var(--white);
+  --co-tag-text-warning: var(--white);
+  --co-tag-text-danger: var(--white);
+  --co-tag-text-disabled: var(--white);
+
+  --co-tag-bg-color-default: oklch(var(--co-tag-text-default) / 7%);
+  --co-tag-bg-color-primary: oklch(50% 0.16 266);
+  --co-tag-bg-color-success: var(--green-900);
+  --co-tag-bg-color-warning: var(--orange-800);
+  --co-tag-bg-color-danger: var(--red-900);
+  --co-tag-bg-color-disabled: var(--gray-200);
+}
+
+.co-tag {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+  gap: 5px;
+  font-size: var(--co-tag-font-size-default);
+  border-radius: var(--co-tag-border-radius);
+  box-sizing: border-box;
+
+  i {
+    padding: 3px;
+    cursor: pointer;
+  }
+}
+
+.co-tag--mini {
+  font-size: var(--co-tag-font-size-mini);
+}
+.co-tag--medium {
+  font-size: var(--co-tag-font-size-medium);
+}
+.co-tag--small {
+  font-size: var(--co-tag-font-size-small);
+}
+
+.co-tag--primary {
+  background-color: var(--co-tag-bg-color-primary);
+  color: var(--co-tag-text-primary);
+}
+
+.co-tag--success {
+  background-color: var(--co-tag-bg-color-success);
+  color: var(--co-tag-text-success);
+}
+
+.co-tag--warning {
+  background-color: var(--co-tag-bg-color-warning);
+  color: var(--co-tag-text-warning);
+}
+
+.co-tag--danger {
+  background-color: var(--co-tag-bg-color-danger);
+  color: var(--co-tag-text-danger);
+}
+
+.co-tag--info {
+  background-color: var(--co-tag-bg-color-default);
+  color: var(--co-tag-text-default);
+}
+
+.co-tag--checked {
+  cursor: pointer;
+}
