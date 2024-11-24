@@ -35,6 +35,10 @@ const navList = [
     url: '/badge',
     text: '上标',
   },
+  {
+    url: '/video',
+    text: '分片播放',
+  },
 ];
 
 const toggleDark = () => {
