@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --dark-color: #635bff;
+        --light-color: #80e9ff;
+      }
+      svg {
+        cursor: pointer;
+      }
+      #darkGroup {
+        fill: var(--dark-color);
+      }
+      #light {
+        fill: var(--light-color);
+      }
+
+      #light,
+      #dark1,
+      #dark2 {
+        transition: all 1s ease;
+        will-change: transform, opacity;
+      }
+
+      #dark2 {
+        transform: translateX(-100%);
+      }
+
+      svg:hover #light {
+        transform: translateX(20%);
+      }
+      svg:hover #dark1 {
+        transform: translateX(40%);
+        opacity: 0;
+      }
+      svg:hover #dark2 {
+        transform: translateX(0%);
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      width="120"
+      height="100"
+      viewBox="0 0 120 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="traggle" clip-path="url(#clip0_0_1)">
+        <rect width="120" height="100" fill="white" />
+        <path id="light" d="M48 50L7.5 73.3827V26.6173L48 50Z" />
+        <g id="darkGroup">
+          <g id="Group 1">
+            <g id="dark1" opacity="0.94" filter="url(#filter0_d_0_1)">
+              <path d="M56 50L15.5 73.3827V26.6173L56 50Z" />
+            </g>
+            <path
+              id="dark2"
+              opacity="0.82"
+              d="M48 50L7.5 73.3827V26.6173L48 50Z"
+            />
+          </g>
+        </g>
+      </g>
+      <defs>
+        <filter
+          id="filter0_d_0_1"
+          x="11.5"
+          y="26.6173"
+          width="48.5"
+          height="54.7654"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="4" />
+          <feGaussianBlur stdDeviation="2" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_0_1"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_0_1"
+            result="shape"
+          />
+        </filter>
+        <clipPath id="clip0_0_1">
+          <rect width="120" height="100" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <script>
+      const svgEl = document.querySelector('#traggle');
+      const updateColors = () => {
+        const randomColor = () =>
+          `#${Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, '0')}`;
+        document.documentElement.style.setProperty(
+          '--dark-color',
+          randomColor()
+        );
+        document.documentElement.style.setProperty(
+          '--light-color',
+          randomColor()
+        );
+      };
+      svgEl.addEventListener('click', updateColors);
+    </script>
+  </body>
+</html>

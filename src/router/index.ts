@@ -15,6 +15,11 @@ const router = createRouter({
           component: () => import('@/components/button/demo/index.vue'),
         },
 {
+          path: '/never-scroll',
+          name: 'NeverScroll',
+          component: () => import('@/components/never-scroll/demo/index.vue'),
+        },
+{
           path: '/tag',
           name: 'Tag',
           component: () => import('@/components/tag/demo/index.vue'),

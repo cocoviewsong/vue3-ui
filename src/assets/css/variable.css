@@ -1,6 +1,7 @@
 :root {
   --co-transition-duration: 0.3s;
   --co-border-radius: 8px;
+  --animation-duration: 25s;
 
   --white: oklch(100% 0 0);
   --base-hue: 233;

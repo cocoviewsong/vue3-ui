@@ -39,6 +39,10 @@ const navList = [
     url: '/video',
     text: '分片播放',
   },
+  {
+    url: '/never-scroll',
+    text: '无限滚动',
+  },
 ];
 
 const toggleDark = () => {
